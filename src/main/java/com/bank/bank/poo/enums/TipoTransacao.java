@@ -1,4 +1,5 @@
 package com.bank.bank.poo.enums;
 
-public class TipoTransacao {
+public enum TipoTransacao {
+    SAQUE, DEPOSITO, TRANSFERENCIA, INVESTIMENTO;
 }

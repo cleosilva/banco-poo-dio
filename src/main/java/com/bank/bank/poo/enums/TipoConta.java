@@ -1,4 +1,5 @@
 package com.bank.bank.poo.enums;
 
-public class TipoConta {
+public enum TipoConta {
+    CORRENTE, POUPANCA, INVESTIMENTO;
 }
