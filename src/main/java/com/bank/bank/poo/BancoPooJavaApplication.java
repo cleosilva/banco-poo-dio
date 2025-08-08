@@ -17,6 +17,7 @@ public class BancoPooJavaApplication {
 		SpringApplication.run(BancoPooJavaApplication.class, args);
 
 		Scanner scanner = new Scanner(System.in);
+		scanner.useLocale(Locale.US);
 		Cliente cliente = new Cliente("João Silva", "123.456.789-00", "joao@email.com");
 
 		// Vamos manter todas as contas criadas neste cliente
