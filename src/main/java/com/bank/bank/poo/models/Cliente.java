@@ -1,7 +1,6 @@
 package com.bank.bank.poo.models;
 
 import lombok.Getter;
-import lombok.Setter;
 import lombok.ToString;
 
 import java.util.ArrayList;
@@ -34,6 +33,12 @@ public class Cliente {
 
     public List<Conta> getContas() {
         return Collections.unmodifiableList(contas);
+    }
+
+    public List<Investimento> listarInvestimentos() {
+        return contas.stream()
+                .flatMap(c -> c.getInvestimentos().stream())
+                .toList();
     }
 
     @Override

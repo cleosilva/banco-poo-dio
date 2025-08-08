@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Getter
@@ -19,6 +20,7 @@ public abstract class Conta {
     private Cliente cliente;
     private List<Transacao> transacoes;
     private final TipoConta tipoConta;
+    private List<Investimento> investimentos = new ArrayList<>();
 
     public Conta(long numeroConta, int agencia, BigDecimal saldo, Cliente cliente,TipoConta tipoConta) {
         this.numeroConta = numeroConta;
@@ -42,5 +44,13 @@ public abstract class Conta {
     public void registrarTransacao(TipoTransacao tipo, BigDecimal valor, String descricao) {
         Transacao transacao = new Transacao(tipo, valor, descricao);
         this.transacoes.add(transacao);
+    }
+
+    public void adicionarInvestimentos(Investimento investimento) {
+        investimentos.add(investimento);
+    }
+
+    public List<Investimento> getInvestimentos() {
+        return Collections.unmodifiableList(investimentos);
     }
 }
