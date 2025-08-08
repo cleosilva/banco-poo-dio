@@ -53,4 +53,8 @@ public abstract class Conta {
     public List<Investimento> getInvestimentos() {
         return Collections.unmodifiableList(investimentos);
     }
+
+    public List<Transacao> getTransacoes() {
+        return Collections.unmodifiableList(transacoes);
+    }
 }
